@@ -36,6 +36,7 @@ steps:
   args:
   - -c
   - |-
+    git config user.email joshuah9519@gmail.com
     git config user.name Cloud Build
     git pull origin main
     git checkout main
