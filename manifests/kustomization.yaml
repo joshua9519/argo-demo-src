@@ -7,6 +7,6 @@ resources:
 - ingress.yaml
 - svc.yaml
 images:
-  - name: demo
-    newName: gcr.io/netlify-dns-test/demo
-    newTag: 0.0.1
+- name: demo
+  newName: gcr.io/netlify-dns-test/demo
+  newTag: af980b7
