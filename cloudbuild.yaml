@@ -16,6 +16,7 @@ steps:
   - gcr.io/$PROJECT_ID/demo:$SHORT_SHA
 - name: nekottyo/kustomize-kubeval
   entrypoint: kustomize
+  dir: manifests
   args:
   - edit
   - set
