@@ -29,7 +29,7 @@ steps:
   - |-
     git config user.email joshuah9519@gmail.com
     git config user.name Cloud Build
-    git pull
+    git pull origin main
     git checkout main
     git add manifests/kustomization.yaml
     git commit -m 'Update image to $SHORT_SHA'
