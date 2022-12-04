@@ -1,0 +1,40 @@
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: demo
+spec:
+  redirectToHttps:
+    enabled: true
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: demo
+spec:
+  domains:
+    - demo.joshuah.me
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo
+  labels:
+    name: demo
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: demo
+    networking.gke.io/managed-certificates: demo
+    networking.gke.io/v1beta1.FrontendConfig: demo
+    kubernetes.io/ingress.class: gce
+spec:
+  rules:
+  - host: demo.joshuah.me
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: demo
+            port: 
+              number: 8080
+
