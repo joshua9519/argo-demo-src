@@ -29,7 +29,6 @@ steps:
   - versions
   - access
   - "1"
-  - --project $PROJECT_ID
   - --secret=github-access-token
   - --out-file=token.txt
 - name: google/cloud-sdk:alpine
@@ -37,7 +36,6 @@ steps:
   args:
   - -c
   - |-
-    echo $REPO_NAME
     git config user.name Cloud Build
     git pull origin main
     git checkout main
