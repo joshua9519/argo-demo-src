@@ -9,4 +9,4 @@ resources:
 images:
 - name: demo
   newName: gcr.io/netlify-dns-test/demo
-  newTag: 2b2ced2
+  newTag: 3894c1b
